@@ -1,2 +1,3 @@
 rootProject.name = 'iwanner-web'
+include 'iwanner-gateway'
 
