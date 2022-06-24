@@ -1,0 +1,22 @@
+spring:
+  devtools:
+    add-properties: false
+  application:
+    name: iwanner-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: qi
+        uri: https://qi.youdao.com
+        predicates:
+          - Path=/qi/**
+        filters:
+          - RewritePath=/qi/(?<segment>.*), /$\{segment}
+server:
+  jetty:
+    accesslog:
+      filename: logs/access_log
+  port: 9999
+management:
+  server:
+    port: 35414
